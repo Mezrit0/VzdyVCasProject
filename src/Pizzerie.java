@@ -1,0 +1,2 @@
+public class Pizzerie {
+}
