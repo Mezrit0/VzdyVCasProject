@@ -1,37 +1,5 @@
 package World;
 
-import java.util.Arrays;
 
-public class Location extends WorldMap {
 
-    private String name;
-    private int ID;
-    private int[] locations;
-
-    public Location(){
-
-    }
-
-    public Location(String name, int ID, String[] locations) {
-        this.name = name;
-        this.ID = ID;
-        this.locations = new int[4];
-        for (int i = 0; i < locations.length; i++) {
-            this.locations[i] = Integer.parseInt(locations[i]);
-        }
-    }
-
-    public int setID(int ID) {
-        this.ID = ID;
-        return ID;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" +
-                "name='" + name + '\'' +
-                ", ID=" + ID +
-                ", locations=" + Arrays.toString(locations) +
-                '}';
-    }
 }

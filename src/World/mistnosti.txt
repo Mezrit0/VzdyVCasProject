@@ -1,0 +1,14 @@
+mistnost n s w e
+Pizzerie;0;0;0;Ulice
+Ulice;0;0;0;World.Benzinka
+World.Benzinka;0;0;0;World.Hory
+World.Hory;0;0;0;Sklep
+Sklep;0;0;0;Chodbavesklepe
+Chodbavesklepe;0;0;Sklep;Schodiste
+Schodiste;Loznice;0;Chodbavesklepe;Obyvacipokoj
+Obyvacipokoj;Kuchyne;Chodbadogaraze;Schodiste 0
+Loznice;Hlavnivchod;Schodiste;0;Kuchyne
+Kuchyne;0;Obyvacipokoj;Loznice;0
+Garaz;0;0;0;Chodbadogaraze
+Chodbadogaraze;Obyvacipokoj;0;garaz;0
+Hlavnivchod;0;Loznice;0;0
