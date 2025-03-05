@@ -2,7 +2,7 @@ package World;
 
 import java.util.Arrays;
 
-public class Location {
+public class Location extends WorldMap {
 
     private String name;
     private int ID;
