@@ -1,18 +1,16 @@
 package Command;
 
-import World.Location;
-
-public class Search implements Command {
-
-    Location location;
+public class OpenDoor implements Command{
 
     @Override
     public String execute() {
-        return location.getItems().toString();
+        return "";
     }
 
     @Override
     public boolean exit() {
         return false;
     }
+
+
 }

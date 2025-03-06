@@ -1,14 +1,10 @@
 package Command;
 
-import World.Location;
-
-public class Search implements Command {
-
-    Location location;
+public class Hide implements Command {
 
     @Override
     public String execute() {
-        return location.getItems().toString();
+        return "";
     }
 
     @Override
