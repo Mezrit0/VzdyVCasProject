@@ -1,9 +1,6 @@
 package Entities;
 
-import Items.Item;
 import World.Location;
-
-import java.util.ArrayList;
 
 public class Enemy {
     private Location location;

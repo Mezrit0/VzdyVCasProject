@@ -35,6 +35,15 @@ public class WorldMap {
         return world.get(currentPosition);
     }
 
+    public boolean move(int direction){
+        int nextID = world.get(currentPosition).();
+        if(nextID != -1 && world.containsKey(nextID)){
+            currentPosition = nextID;
+            return true;
+        }
+        return false;
+    }
+
     public void setNewPosition(int newPosition) {
         if (world.containsKey(newPosition)) {
             currentPosition = newPosition;

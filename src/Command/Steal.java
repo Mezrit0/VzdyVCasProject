@@ -1,7 +1,6 @@
 package Command;
 
 import Items.Inventory;
-import Items.Item;
 import Items.Valuable;
 
 public class Steal implements Command{

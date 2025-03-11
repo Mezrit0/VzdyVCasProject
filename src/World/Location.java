@@ -1,8 +1,9 @@
 package World;
 
 import Items.Item;
-import Items.Valuable;
 
+
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Location extends WorldMap {
@@ -10,15 +11,10 @@ public class Location extends WorldMap {
     private String name;
     private int ID;
     private int[] locations;
-    private Item[] items;
+    private ArrayList<Item> items;
 
 
-    public Location(){
-        this.items = new Item[3];
-        for (int i = 0; i < 3; i++) {
-            items[i] = new Valuable("wallet", "It has alot of money", true);
-        }
-    }
+
 
     public Location(String name, int ID, String[] locations) {
         this.name = name;
@@ -50,11 +46,15 @@ public class Location extends WorldMap {
         return locations;
     }
 
-    public Item[] getItems() {
+    public void setLocations(int[] locations) {
+        this.locations = locations;
+    }
+
+    public ArrayList<Item> getItems() {
         return items;
     }
 
-    public void setItems(Item[] items) {
+    public void setItems(ArrayList<Item> items) {
         this.items = items;
     }
 

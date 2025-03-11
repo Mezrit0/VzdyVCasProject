@@ -1,6 +1,6 @@
 package Items;
 
-public class Key extends Item{
+public class Key extends Item {
 
     private char doorIndex;
 

@@ -12,10 +12,11 @@ public class PickUp implements Command {
 
     @Override
     public String execute() {
-        for (int i = 0; i < location.getItems().length; i++) {
+        for (int i = 0; i < location.getItems().size(); i++) {
             if (item.getName().equals(location.getItems())){
                 inventory.getItems().add(item);
-
+                location.getItems().remove(item);
+                return "You picked up " + item.getName();
             }
         }
 

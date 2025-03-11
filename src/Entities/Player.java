@@ -1,14 +1,17 @@
 package Entities;
 
-import Items.Item;
+import Items.Inventory;
 import World.Location;
-
-import java.util.ArrayList;
 
 public class Player {
 
     private Location location;
-    private ArrayList<Item> inventory;
+    private Inventory inventory;
+
+    public Player(Location location, Inventory inventory) {
+        this.location = location;
+        this.inventory = inventory;
+    }
 
     public Location getLocation() {
         return location;
@@ -18,11 +21,11 @@ public class Player {
         this.location = location;
     }
 
-    public ArrayList<Item> getInventory() {
+    public Inventory getInventory() {
         return inventory;
     }
 
-    public void setInventory(ArrayList<Item> inventory) {
+    public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
 }
