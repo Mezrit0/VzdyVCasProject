@@ -12,6 +12,7 @@ public class Location extends WorldMap {
     private int ID;
     private int[] locations;
     private ArrayList<Item> items;
+    private ArrayList<Location> neighbors;
 
 
 
@@ -23,12 +24,26 @@ public class Location extends WorldMap {
         for (int i = 0; i < locations.length; i++) {
             this.locations[i] = Integer.parseInt(locations[i]);
         }
+
+
     }
 
     public int setID(int ID) {
         this.ID = ID;
         return ID;
     }
+
+    public void setNeighbors(Location location) {
+        if (!neighbors.contains(location)) {
+            neighbors.add(location);
+            location.getNeighbors().add(this);
+        }
+    }
+    public ArrayList<Location> getNeighbors() {
+        return neighbors;
+    }
+
+
 
     public String getName() {
         return name;

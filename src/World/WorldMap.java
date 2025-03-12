@@ -36,7 +36,7 @@ public class WorldMap {
     }
 
     public boolean move(int direction){
-        int nextID = world.get(currentPosition).();
+//        int nextID = world.get(currentPosition);
         if(nextID != -1 && world.containsKey(nextID)){
             currentPosition = nextID;
             return true;

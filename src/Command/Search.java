@@ -8,7 +8,11 @@ public class Search implements Command {
 
     @Override
     public String execute() {
-        return location.getItems().toString();
+        if (!location.getItems().isEmpty()) {
+            return location.getItems().toString();
+        } else{
+            return "Room doesnt have any items";
+        }
     }
 
     @Override

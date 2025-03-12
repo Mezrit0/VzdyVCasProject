@@ -1,7 +1,8 @@
 package Command;
 
 import Entities.Player;
-import Items.Item;
+
+import Items.Key;
 import World.Location;
 
 public class OpenDoor implements Command {
@@ -12,10 +13,9 @@ public class OpenDoor implements Command {
 
     @Override
     public String execute() {
-        Item key;
+        Key key = new Key();
         if (player.getInventory().hasItem(key)) {
-            System.out.println("You've opened " + lockedRoom.getName());
-            player.;
+            return "You've opened " + lockedRoom.getName();
         } else {
             return "You don't have keys for this room";
         }
