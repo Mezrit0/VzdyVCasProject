@@ -12,6 +12,7 @@ public class Enemy {
 
 
 
+
     public Enemy(Location startLocation, WorldMap worldMap) {
         this.location = startLocation;
         this.worldMap = worldMap;
@@ -39,6 +40,15 @@ public class Enemy {
             return true;
         }else {
             return false;
+        }
+    }
+
+    public void chasePlayer(Enemy enemy, Player player){
+        if (player.getLocation() == enemy.getLocation()){
+            
+            enemy.moveRandombly(player.getLocation());
+        } else if (player.isHided()) {
+            enemy.moveRandombly(location);
         }
     }
 

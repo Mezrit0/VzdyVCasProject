@@ -8,10 +8,6 @@ public class Fight implements Command {
     private Player player;
     private Enemy enemy;
 
-    public Fight(Player player, Enemy enemy) {
-        this.player = player;
-        this.enemy = enemy;
-    }
 
     @Override
     public String execute() {

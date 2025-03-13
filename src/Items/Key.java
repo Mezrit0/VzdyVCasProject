@@ -1,8 +1,11 @@
 package Items;
 
+import World.Location;
+
 public class Key extends Item {
 
     private char doorIndex;
+    private Location location;
 
     public Key(String name, String description, char doorIndex) {
         super(name, description);
@@ -11,6 +14,8 @@ public class Key extends Item {
 
     @Override
     public void use() {
-
+        if (doorIndex == location.getID()) {
+            location.setLocked(false);
+        }
     }
 }

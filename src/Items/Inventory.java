@@ -6,19 +6,21 @@ public class Inventory {
 
     private ArrayList<Item> items;
 
-    public void addItem(Item item) {
+    public String addItem(Item item) {
         if (item != null) {
             items.add(item);
-            System.out.println("Byl pridan item: " + item.getName());
+            return "Item was added: " + item.getName();
+        }else {
+            return "Item doesn't exist";
         }
     }
 
-    public void removeItem(Item item) {
+    public String removeItem(Item item) {
         if (items.contains(item)) {
             items.remove(item);
-            System.out.println("Odebran predmet: " + item.getName());
+            return  "Item was removed: " + item.getName();
         } else {
-            System.out.println("Predmet neni v inventory");
+            return "Item isn't in your inventory";
         }
     }
 

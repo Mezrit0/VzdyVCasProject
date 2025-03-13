@@ -1,5 +1,6 @@
 package Entities;
 
+import Command.Hide;
 import Items.Inventory;
 import World.Location;
 
@@ -9,10 +10,20 @@ public class Player {
     private Inventory inventory;
     private int health;
 
+
     public Player(Location location, Inventory inventory, int health) {
         this.location = location;
         this.inventory = inventory;
         this.health = health;
+    }
+
+    public boolean isHided(){
+        if (location.isHideable()){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public void attack(Enemy enemy) {

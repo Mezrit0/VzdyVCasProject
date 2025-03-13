@@ -2,16 +2,22 @@ package Command;
 
 import Items.Inventory;
 import Items.Valuable;
+import World.Location;
 
 public class Steal implements Command{
 
-    Valuable valuable;
-    Inventory inventory;
+    private Valuable valuable;
+    private Inventory inventory;
+    private Location location;
 
     @Override
     public String execute() {
-        inventory.getItems().add(valuable);
-        return "We gettin rich with this one";
+        if (location.getItems().contains(valuable)) {
+            inventory.getItems().add(valuable);
+            return "We gettin rich with this one";
+        }else{
+            return "There's no valuable here";
+        }
     }
 
     @Override

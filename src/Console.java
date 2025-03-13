@@ -1,4 +1,7 @@
 import Command.*;
+import Entities.Enemy;
+import Entities.Player;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -10,8 +13,15 @@ public class Console {
     public void inicialization(){
         map.put("goto", new GoTo());
         map.put("showInventory", new ShowInventory());
-        map.put("Search", new Search());
-        map.put("stop", new Quit());
+        map.put("search", new Search());
+        map.put("quit", new Quit());
+        map.put("hide", new Hide());
+        map.put("openDoor", new OpenDoor());
+        map.put("steal", new Steal());
+        map.put("pickUp", new PickUp());
+        map.put("useItem", new UseItem());
+        map.put("text", new Text());
+        map.put("Fight", new Fight());
     }
 
     private Scanner scanner = new Scanner(System.in);

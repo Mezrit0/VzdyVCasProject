@@ -17,11 +17,7 @@ public class WorldMap {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] lines = line.split(";");
-                Location location = new Location(
-                        lines[1],
-                        Integer.parseInt(lines[0]),
-                        Arrays.copyOfRange(lines, 2, 6)
-                );
+                Location location = new Location(lines[1], Integer.parseInt(lines[0]), Arrays.copyOfRange(lines, 2, 6));
                 world.put(Integer.valueOf(lines[0]), location);
             }
             return true;
@@ -36,7 +32,7 @@ public class WorldMap {
     }
 
     public boolean move(int direction){
-//        int nextID = world.get(currentPosition);
+        int nextID = currentPosition;
         if(nextID != -1 && world.containsKey(nextID)){
             currentPosition = nextID;
             return true;
