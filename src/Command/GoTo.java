@@ -7,50 +7,24 @@ import java.util.Scanner;
 
 public class GoTo implements Command {
     private Scanner scanner = new Scanner(System.in);
-    private Location currentLocation = new Location();
+    private Location currentLocation;
     private WorldMap world = new WorldMap();
 
-    /* 0 - Sever,
-     * 1 - Východ,
-     * 2 - Jih,
-     * 3 - Západ
-     */
+
+
     @Override
     public String execute() {
-        currentLocation = world.getCurrentPosition();
-        System.out.println("where u wanna go");
-        String direction = scanner.next();
-        System.out.println(currentLocation);
-
-        int index = -1; // north 0, south 1, west 2, east 3
-        switch (direction) {
-            case "north":
-                index = 0;
-                break;
-            case "south":
-                index = 1;
-                break;
-            case "west":
-                index = 2;
-                break;
-            case "east":
-                index = 3;
-                break;
-            default:
-                System.out.println("Not valid move try (north, south, west, east");
-                return null;
+        System.out.println("Where do you want to go to?");
+        String direction = "";
+        direction = scanner.next();
+        direction.toLowerCase();
+        while (!direction.equals("north") && !direction.equals("south") && !direction.equals("west") && !direction.equals("east")) {
+            System.out.println("not valid move");
+            direction = scanner.next();
+            direction.toLowerCase();
         }
-
-        int newLocation = currentLocation.setID(index);
-        if (newLocation == -1){
-            return null;
-        }
-
-        world.setNewPosition(newLocation);
-        Location newLoc = world.getCurrentPosition();
-        System.out.println("you've moved to: " + newLoc.toString());
-
-        return newLoc.toString();
+        System.out.println(world.move(direction));
+        return "";
 
     }
 

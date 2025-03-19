@@ -5,12 +5,20 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class WorldMap {
 
     private HashMap<Integer, Location> world = new HashMap<>();
     private int start = 0;
     private int currentPosition = start;
+    private Scanner scanner = new Scanner(System.in);
+
+    public WorldMap() {
+        this.currentPosition = start;
+        this.world = world;
+
+    }
 
     public boolean loadMap() {
         try (BufferedReader br = new BufferedReader(new FileReader("worldmap.txt"))) {
@@ -27,17 +35,40 @@ public class WorldMap {
 
     }
 
+
     public Location getCurrentPosition(){
         return world.get(currentPosition);
     }
 
-    public boolean move(int direction){
-        int nextID = currentPosition;
-        if(nextID != -1 && world.containsKey(nextID)){
-            currentPosition = nextID;
-            return true;
+    public String move(String direction){
+        int index;
+        index = -1;
+        // north 0, south 1, west 2, east 3
+        switch (direction.toLowerCase()) {
+            case "north":
+                index = 0;
+                break;
+            case "south":
+                index = 1;
+                break;
+            case "west":
+                index = 2;
+                break;
+            case "east":
+                index = 3;
+                break;
+            default:
+                return "Not valid move try (north, south, west, east";
         }
-        return false;
+
+        int newLocation = world.get(currentPosition).getLocations()[index];
+        if (newLocation == -1){
+            return "you can't move this direction";
+        }else {
+            currentPosition = newLocation;
+            return "You have moved this direction at " + world.get(currentPosition).getName();
+        }
+
     }
 
     public void setNewPosition(int newPosition) {
