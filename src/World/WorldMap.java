@@ -10,15 +10,9 @@ import java.util.Scanner;
 public class WorldMap {
 
     private HashMap<Integer, Location> world = new HashMap<>();
-    private int start = 0;
-    private int currentPosition = start;
+    private static int start = 0;
+    private static int currentPosition = start;
     private Scanner scanner = new Scanner(System.in);
-
-    public WorldMap() {
-        this.currentPosition = start;
-        this.world = world;
-
-    }
 
     public boolean loadMap() {
         try (BufferedReader br = new BufferedReader(new FileReader("worldmap.txt"))) {
@@ -28,6 +22,7 @@ public class WorldMap {
                 Location location = new Location(lines[1], Integer.parseInt(lines[0]), Arrays.copyOfRange(lines, 2, 6));
                 world.put(Integer.valueOf(lines[0]), location);
             }
+            System.out.println("Loaded WorldMap");
             return true;
         } catch (IOException e) {
             return false;
@@ -40,9 +35,16 @@ public class WorldMap {
         return world.get(currentPosition);
     }
 
+    static public int getCurrentPosition2(){
+        return currentPosition;
+    }
+
+    public HashMap<Integer, Location> getWorldMap() {
+        return world;
+    }
+
     public String move(String direction){
         int index;
-        index = -1;
         // north 0, south 1, west 2, east 3
         switch (direction.toLowerCase()) {
             case "north":
@@ -75,6 +77,10 @@ public class WorldMap {
         if (world.containsKey(newPosition)) {
             currentPosition = newPosition;
         }
+    }
+
+    public void setCurrentPosition(int currentPosition) {
+        this.currentPosition = currentPosition;
     }
 
     public HashMap<Integer, Location> getWorld() {

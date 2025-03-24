@@ -43,21 +43,21 @@ public class Enemy {
         }
     }
 
-    public void chasePlayer(Enemy enemy, Player player){
-        if (player.getLocation() == enemy.getLocation()){
-            
-            enemy.moveRandombly(player.getLocation());
-        } else if (player.isHided()) {
-            enemy.moveRandombly(location);
-        }
-    }
+//    public void chasePlayer(Enemy enemy, Player player){
+//        if (player.getLocation() == enemy.getLocation()){
+//
+//            enemy.moveRandombly(player.getLocation());
+//        } else if (player.isHided()) {
+//            enemy.moveRandombly(location);
+//        }
+//    }
 
-    public void moveRandombly(Location loc) {
-        Random random = new Random();
-        if (location.getNeighbors().contains(loc)) {
-            Location newLocation = worldMap.getWorld().get(random.nextInt(worldMap.getWorld().size()));
-        }
-    }
+//    public void moveRandombly(Location loc) {
+//        Random random = new Random();
+//        if (location.getNeighbors().contains(loc)) {
+//            Location newLocation = worldMap.getWorld().get(random.nextInt(worldMap.getWorld().size()));
+//        }
+//    }
 
     public Location getLocation() {
         return location;

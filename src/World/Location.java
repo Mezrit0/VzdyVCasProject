@@ -6,13 +6,13 @@ import Items.Item;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Location extends WorldMap {
+public class Location {
 
     private String name;
     private int ID;
     private int[] locations;
     private ArrayList<Item> items;
-    private ArrayList<Location> neighbors;
+//    private ArrayList<Location> neighbors;
     private boolean hideable;
     private boolean locked;
 
@@ -26,23 +26,23 @@ public class Location extends WorldMap {
             this.locations[i] = Integer.parseInt(locations[i]);
         }
 
-        if (name.equals("ObyvaciPokoj") || name.equals("Garaz") || name.equals("Loznice")){
+        if (name.equals("Obyvaci Pokoj") || name.equals("Garaz") || name.equals("Loznice")){
             this.hideable = true;
         }else {
             this.hideable = false;
         }
 
-        if (name.equals("HlavniVchod")){
+        if (name.equals("Hlavni Vchod")){
             this.locked = true;
         }else {
             this.locked = false;
         }
 
     }
-
-    public void setNeighbors(ArrayList<Location> neighbors) {
-        this.neighbors = neighbors;
-    }
+//
+//    public void setNeighbors(ArrayList<Location> neighbors) {
+//        this.neighbors = neighbors;
+//    }
 
     public boolean isHideable() {
         return hideable;
@@ -57,15 +57,15 @@ public class Location extends WorldMap {
         return ID;
     }
 
-    public void setNeighbors(Location location) {
-        if (!neighbors.contains(location)) {
-            neighbors.add(location);
-            location.getNeighbors().add(this);
-        }
-    }
-    public ArrayList<Location> getNeighbors() {
-        return neighbors;
-    }
+//    public void setNeighbors(Location location) {
+//        if (!neighbors.contains(location)) {
+//            neighbors.add(location);
+//            location.getNeighbors().add(this);
+//        }
+//    }
+//    public ArrayList<Location> getNeighbors() {
+//        return neighbors;
+//    }
 
 
 

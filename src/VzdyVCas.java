@@ -12,8 +12,6 @@ public class VzdyVCas {
         this.worldMap = new WorldMap();
         this.console = new Console();
 
-
-
         worldMap.loadMap();
         console.start();
 

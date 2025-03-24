@@ -1,13 +1,13 @@
-0;Pizzerie;-1;-1;-1;1
-1;Ulice;-1;-1;-1;2
-2;Benzinka;-1;-1;-1;3
-3;Hory;4;-1;-1;-1
-4;Sklep;-1;-1;-1;5
-5;ChodbaVeSklepe;-1;-1;-1;6
-6;Schodiste;7;-1;5;10
-7;Loznice;9;6;-1;8
-8;Kuchyne;-1;10;7;-1
-9;HlavniVchod;-1;7;-1;-1
-10;ObyvaciPokoj;8;11;6;-1
-11;ChodbaDoGaraz;10;-1;12;-1
-12;Garaz;-1;-1;-1;11
+0;Pizzerie;-1;-1;-1;1;
+1;Ulice;-1;-1;-1;2;
+2;Benzinka;-1;-1;-1;3;
+3;Hory;4;-1;-1;-1;
+4;Sklep;-1;-1;-1;5;
+5;Chodba Ve Sklepe;-1;-1;-1;6;
+6;Schodiste;7;-1;5;10;
+7;Loznice;9;6;-1;8;
+8;Kuchyne;-1;10;7;-1;
+9;Hlavni Vchod;-1;7;-1;-1;
+10;Obyvaci Pokoj;8;11;6;-1;
+11;Chodba Do Garaz;10;-1;12;-1;
+12;Garaz;-1;-1;-1;11;
