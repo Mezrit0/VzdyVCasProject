@@ -1,8 +1,15 @@
 package Command;
 
 import World.Location;
+import World.WorldMap;
 
 public class Search implements Command {
+    private WorldMap world;
+
+
+    public void setWorld(WorldMap world) {
+        this.world = world;
+    }
 
     Location location;
 

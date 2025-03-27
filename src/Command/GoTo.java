@@ -8,9 +8,11 @@ import java.util.Scanner;
 public class GoTo implements Command {
     private Scanner scanner = new Scanner(System.in);
     private Location currentLocation;
-    private WorldMap world = new WorldMap();
+    private WorldMap world;
 
-
+    public GoTo(WorldMap world){
+        this.world = world;
+    }
 
     @Override
     public String execute() {

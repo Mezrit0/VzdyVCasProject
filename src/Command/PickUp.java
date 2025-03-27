@@ -3,8 +3,15 @@ package Command;
 import Items.Inventory;
 import Items.Item;
 import World.Location;
+import World.WorldMap;
 
 public class PickUp implements Command {
+    private WorldMap world;
+
+
+    public void setWorld(WorldMap world) {
+        this.world = world;
+    }
 
     Item item;
     Inventory inventory;

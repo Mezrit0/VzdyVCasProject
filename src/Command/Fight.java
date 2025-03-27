@@ -2,11 +2,18 @@ package Command;
 
 import Entities.Enemy;
 import Entities.Player;
+import World.WorldMap;
 
 public class Fight implements Command {
-
+    private WorldMap world;
     private Player player;
     private Enemy enemy;
+
+    public void setWorld(WorldMap world) {
+        this.world = world;
+    }
+
+
 
 
     @Override

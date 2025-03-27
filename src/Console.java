@@ -1,6 +1,7 @@
 import Command.*;
 import Entities.Enemy;
 import Entities.Player;
+import World.WorldMap;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -8,10 +9,11 @@ import java.util.Scanner;
 
 public class Console {
     private boolean exit = false;
-    private HashMap<String, Command> map = new HashMap<>();
+    private  HashMap<String, Command> map = new HashMap<>();
+    private WorldMap worldMap = new WorldMap();
 
     public void inicialization(){
-        map.put("goto", new GoTo());
+        map.put("goto", new GoTo(worldMap));
         map.put("showInventory", new ShowInventory());
         map.put("search", new Search());
         map.put("quit", new Quit());
@@ -22,6 +24,8 @@ public class Console {
         map.put("useItem", new UseItem());
         map.put("text", new Text());
         map.put("Fight", new Fight());
+        worldMap.loadMap();
+
     }
 
     private Scanner scanner = new Scanner(System.in);

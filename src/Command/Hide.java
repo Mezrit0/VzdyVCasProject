@@ -1,8 +1,11 @@
 package Command;
 
 import World.Location;
+import World.WorldMap;
 
 public class Hide implements Command {
+    private WorldMap world = new WorldMap();
+
 
 
     private Location location;

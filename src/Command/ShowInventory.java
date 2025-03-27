@@ -1,10 +1,17 @@
 package Command;
 
 import Items.Inventory;
+import World.WorldMap;
 
 import java.util.ArrayList;
 
 public class ShowInventory implements Command {
+    private WorldMap world;
+
+
+    public void setWorld(WorldMap world) {
+        this.world = world;
+    }
 
     Inventory inventory;
 

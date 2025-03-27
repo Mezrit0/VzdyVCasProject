@@ -4,8 +4,15 @@ import Entities.Player;
 
 import Items.Key;
 import World.Location;
+import World.WorldMap;
 
 public class OpenDoor implements Command {
+    private WorldMap world;
+
+
+    public void setWorld(WorldMap world) {
+        this.world = world;
+    }
 
 
     private Player player;

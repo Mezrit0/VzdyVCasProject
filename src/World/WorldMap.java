@@ -9,10 +9,11 @@ import java.util.Scanner;
 
 public class WorldMap {
 
-    private HashMap<Integer, Location> world = new HashMap<>();
+    private static HashMap<Integer, Location> world = new HashMap<>();
     private static int start = 0;
     private static int currentPosition = start;
     private Scanner scanner = new Scanner(System.in);
+
 
     public boolean loadMap() {
         try (BufferedReader br = new BufferedReader(new FileReader("worldmap.txt"))) {
@@ -22,7 +23,7 @@ public class WorldMap {
                 Location location = new Location(lines[1], Integer.parseInt(lines[0]), Arrays.copyOfRange(lines, 2, 6));
                 world.put(Integer.valueOf(lines[0]), location);
             }
-            System.out.println("Loaded WorldMap");
+
             return true;
         } catch (IOException e) {
             return false;

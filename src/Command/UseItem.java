@@ -2,8 +2,15 @@ package Command;
 
 import Items.Inventory;
 import Items.Item;
+import World.WorldMap;
 
 public class UseItem implements Command {
+    private WorldMap world;
+
+
+    public void setWorld(WorldMap world) {
+        this.world = world;
+    }
 
     Inventory inventory;
     Item item;

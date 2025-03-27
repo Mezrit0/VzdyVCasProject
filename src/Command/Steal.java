@@ -3,8 +3,15 @@ package Command;
 import Items.Inventory;
 import Items.Valuable;
 import World.Location;
+import World.WorldMap;
 
 public class Steal implements Command{
+    private WorldMap world;
+
+
+    public void setWorld(WorldMap world) {
+        this.world = world;
+    }
 
     private Valuable valuable;
     private Inventory inventory;

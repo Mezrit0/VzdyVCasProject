@@ -1,11 +1,19 @@
 package Command;
 
+import World.WorldMap;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class Text implements Command {
+    private WorldMap world;
+
+
+    public void setWorld(WorldMap world) {
+        this.world = world;
+    }
 
     public static String giveSpeech(){
         try (BufferedReader br = new BufferedReader(new FileReader("speeches.txt"))) {
