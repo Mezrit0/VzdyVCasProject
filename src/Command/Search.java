@@ -8,15 +8,16 @@ public class Search implements Command {
 
 
     public void setWorld(WorldMap world) {
-        this.world = world;
+        this.world = new WorldMap();
     }
 
-    Location location;
+
 
     @Override
     public String execute() {
-        if (!location.getItems().isEmpty()) {
-            return location.getItems().toString();
+        setWorld(world);
+        if (!world.getCurrentPosition().getItems().isEmpty()) {
+            return world.getCurrentPosition().getItems().toString();
         } else{
             return "Room doesnt have any items";
         }

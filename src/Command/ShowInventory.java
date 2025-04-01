@@ -13,11 +13,17 @@ public class ShowInventory implements Command {
         this.world = world;
     }
 
-    Inventory inventory;
+    private Inventory inventory;
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = new Inventory();
+    }
 
     ArrayList<String> list;
     @Override
     public String execute() {
+        setWorld(world);
+        setInventory(inventory);
         for (int i = 0; i < inventory.getItems().size(); i++) {
             list.add(inventory.getItems().get(i).toString());
         }

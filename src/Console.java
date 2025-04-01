@@ -14,16 +14,16 @@ public class Console {
 
     public void inicialization(){
         map.put("goto", new GoTo(worldMap));
-        map.put("showInventory", new ShowInventory());
+        map.put("showinventory", new ShowInventory());
         map.put("search", new Search());
         map.put("quit", new Quit());
         map.put("hide", new Hide());
-        map.put("openDoor", new OpenDoor());
+        map.put("opendoor", new OpenDoor());
         map.put("steal", new Steal());
         map.put("pickUp", new PickUp());
-        map.put("useItem", new UseItem());
+        map.put("use", new UseItem());
         map.put("text", new Text());
-        map.put("Fight", new Fight());
+        map.put("fight", new Fight());
         worldMap.loadMap();
 
     }

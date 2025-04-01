@@ -10,19 +10,25 @@ public class PickUp implements Command {
 
 
     public void setWorld(WorldMap world) {
-        this.world = world;
+        this.world = new WorldMap();
     }
 
-    Item item;
-    Inventory inventory;
-    Location location;
+    public void setInventory(Inventory inventory) {
+        this.inventory = new Inventory();
+    }
+
+    private Item item;
+    private Inventory inventory;
+
 
     @Override
     public String execute() {
-        for (int i = 0; i < location.getItems().size(); i++) {
-            if (item.getName().equals(location.getItems().get(i).getName())) {
+        setInventory(inventory);
+        setWorld(world);
+        for (int i = 0; i < world.getCurrentPosition().getItems().size(); i++) {
+            if (item.getName().equals(world.getCurrentPosition().getItems().get(i).getName())) {
                 inventory.getItems().add(item);
-                location.getItems().remove(item);
+                world.getCurrentPosition().getItems().remove(item);
                 return "You picked up " + item.getName();
             }
         }

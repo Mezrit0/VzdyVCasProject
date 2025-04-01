@@ -5,19 +5,16 @@ import Items.Item;
 import World.WorldMap;
 
 public class UseItem implements Command {
-    private WorldMap world;
+    private Inventory inventory;
+    private Item item;
 
-
-    public void setWorld(WorldMap world) {
-        this.world = world;
+    public void setInventory(Inventory inventory) {
+        this.inventory = new Inventory();
     }
-
-    Inventory inventory;
-    Item item;
-
 
     @Override
     public String execute() {
+        setInventory(inventory);
         if (inventory.getItems().contains(item)){
             item.use();
             inventory.getItems().remove(item);

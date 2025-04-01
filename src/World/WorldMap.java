@@ -40,6 +40,10 @@ public class WorldMap {
         return currentPosition;
     }
 
+    public static int getStart() {
+        return start;
+    }
+
     public HashMap<Integer, Location> getWorldMap() {
         return world;
     }

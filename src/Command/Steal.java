@@ -10,16 +10,21 @@ public class Steal implements Command{
 
 
     public void setWorld(WorldMap world) {
-        this.world = world;
+        this.world = new WorldMap();
     }
 
     private Valuable valuable;
     private Inventory inventory;
-    private Location location;
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = new Inventory();
+    }
 
     @Override
     public String execute() {
-        if (location.getItems().contains(valuable)) {
+        setWorld(world);
+        setInventory(inventory);
+        if (world.getCurrentPosition().getItems().contains(valuable)) {
             inventory.getItems().add(valuable);
             return "We gettin rich with this one";
         }else{

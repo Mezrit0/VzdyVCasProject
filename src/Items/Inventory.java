@@ -6,6 +6,10 @@ public class Inventory {
 
     private ArrayList<Item> items;
 
+    public Inventory() {
+        this.items = new ArrayList<>();
+    }
+
     public String addItem(Item item) {
         if (item != null) {
             items.add(item);
@@ -26,10 +30,6 @@ public class Inventory {
 
     public boolean hasItem(Item item) {
         return items.contains(item);
-    }
-
-    public Inventory(ArrayList<Item> items) {
-        this.items = items;
     }
 
     public ArrayList<Item> getItems() {
