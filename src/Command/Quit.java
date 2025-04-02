@@ -18,6 +18,10 @@ public class Quit implements Command {
         return "the end";
     }
 
+    /**
+     * indicates that this command ends the game
+     * @return
+     */
     @Override
     public boolean exit() {
         return true;

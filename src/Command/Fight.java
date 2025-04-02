@@ -14,18 +14,27 @@ public class Fight implements Command {
     }
 
 
-
+    /**
+     * player attacks first, enemy will defend himself. If player dies the game will end
+     * @return
+     */
 
     @Override
     public String execute() {
+        setWorld(world);
         if (enemy == null) {
             return "No enemy here to fight";
         }else{
            player.attack(enemy);
             if (enemy.isDead()){
                 return "You've killed him";
-            }else {
+            } else {
                 enemy.attack(player);
+                if (player.getHealth() <= 0) {
+                    Quit quit = new Quit();
+                    quit.execute();
+                    return "You died";
+                }
                 return "HE GOT MAD";
             }
         }

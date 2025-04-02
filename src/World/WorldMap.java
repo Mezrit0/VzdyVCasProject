@@ -21,6 +21,9 @@ public class WorldMap {
     private Scanner scanner = new Scanner(System.in);
     private HashMap<Integer, ArrayList<Item>> itemsOfLocation = new HashMap<>();
 
+    /**
+     * loads map from text file, each line represents location with connections to other ones
+     */
 
     public boolean loadMap() {
         try (BufferedReader br = new BufferedReader(new FileReader("worldmap.txt"))) {
@@ -38,6 +41,9 @@ public class WorldMap {
 
     }
 
+    /**
+     * this adds items to rooms by checking the players current position, if its one of the ones where items are supposed to be than it will generate them.
+     */
 
     public void addItemsToLoc(){
         if (!itemsOfLocation.containsKey(currentPosition)) {
@@ -108,6 +114,14 @@ public class WorldMap {
     public HashMap<Integer, Location> getWorldMap() {
         return world;
     }
+
+    /**
+     * Moves the player to a new location based on the given direction.
+     * Checks for restrictions like missing item or locked paths.
+     *
+     * @param direction the desired movement direction (example "north", "south", "east", "west")
+     * @return a message indicating the outcome of the movement
+     */
 
     public String move(String direction){
         int index;

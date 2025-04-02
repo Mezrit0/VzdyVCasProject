@@ -1,7 +1,6 @@
 package Tests;
 
 
-import Command.Steal;
 import World.Location;
 import World.WorldMap;
 import org.junit.Test;

@@ -11,6 +11,10 @@ public class Player {
     private static int health = 100;
 
 
+    /**
+     * if player isHided is true, then enemies won't attack
+     * @return
+     */
 
     public boolean isHided(){
         if (location.isHideable()){
@@ -44,4 +48,6 @@ public class Player {
     public void setLocation(Location location) {
         this.location = location;
     }
+
+
 }

@@ -19,6 +19,11 @@ public class Enemy {
         this.health = 100;
     }
 
+    /**
+     * if meets player, and he chooses to fight his enemies than enemy will defend
+     * @param player
+     */
+
     public void attack(Player player) {
         player.takeDamage(10);
     }

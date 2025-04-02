@@ -17,6 +17,13 @@ public class Location {
     private boolean locked;
 
 
+    /**
+     * sets some locations to be locked or hideable
+     * @param name
+     * @param ID
+     * @param locations
+     */
+
     public Location(String name, int ID, String[] locations) {
         this.name = name;
         this.ID = ID;
@@ -56,6 +63,11 @@ public class Location {
         this.ID = ID;
         return ID;
     }
+
+    /**
+     * this was meant for the work of locked rooms but didn't manage to make it work :(
+     * @return
+     */
 
 //    public void setNeighbors(Location location) {
 //        if (!neighbors.contains(location)) {

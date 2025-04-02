@@ -10,6 +10,10 @@ public class Food extends Item{
         super(name, description);
     }
 
+    /**
+     * food helps player to get back his health
+     */
+
     @Override
     public void use() {
         int newHealth = player.getHealth() + 10;

@@ -6,6 +6,12 @@ public class Inventory {
 
     private static ArrayList<Item> items = new ArrayList<>();
 
+    /**
+     * adds item into the list as inventory
+     * @param item
+     * @return
+     */
+
     public static String addItem(Item item) {
         if (item != null) {
             items.add(item);
@@ -14,6 +20,12 @@ public class Inventory {
             return "Item doesn't exist";
         }
     }
+
+    /**
+     * removes the item from the list
+     * @param item
+     * @return
+     */
 
     public String removeItem(Item item) {
         if (items.contains(item)) {

@@ -32,7 +32,9 @@ public class GoTo implements Command {
         System.out.println(world.move(direction));
         return "";
 
+
     }
+
 
     @Override
     public boolean exit() {

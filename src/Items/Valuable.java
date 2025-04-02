@@ -2,6 +2,9 @@ package Items;
 
 import java.util.Random;
 
+/**
+ * valuable is just for the after game you get how much money you've stoled from the kidnappers
+ */
 public class Valuable extends Item {
 
     private boolean valuable;
