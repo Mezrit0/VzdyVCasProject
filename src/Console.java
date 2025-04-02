@@ -13,12 +13,13 @@ public class Console {
     private WorldMap worldMap = new WorldMap();
 
     public void inicialization(){
-        map.put("goto", new GoTo(worldMap));
+        map.put("help", new Help());
+        map.put("go", new GoTo(worldMap));
         map.put("showinventory", new ShowInventory());
-        map.put("search", new Search());
+        map.put("search", new Search(worldMap.getCurrentPosition()));
         map.put("quit", new Quit());
         map.put("hide", new Hide());
-        map.put("opendoor", new OpenDoor());
+        map.put("open", new OpenDoor());
         map.put("steal", new Steal());
         map.put("pickUp", new PickUp());
         map.put("use", new UseItem());

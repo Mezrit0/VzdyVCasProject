@@ -4,10 +4,10 @@ import World.Location;
 
 public class Key extends Item {
 
-    private char doorIndex;
+    private int doorIndex;
     private Location location;
 
-    public Key(String name, String description, char doorIndex) {
+    public Key(String name, String description, int doorIndex) {
         super(name, description);
         this.doorIndex = doorIndex;
     }

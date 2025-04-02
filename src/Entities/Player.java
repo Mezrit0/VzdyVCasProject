@@ -21,6 +21,14 @@ public class Player {
         }
     }
 
+    public static int getHealth() {
+        return health;
+    }
+
+    public static void setHealth(int health) {
+        Player.health = health;
+    }
+
     public void attack(Enemy enemy) {
         enemy.takeDamage(10);
     }

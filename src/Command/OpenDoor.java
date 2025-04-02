@@ -24,7 +24,9 @@ public class OpenDoor implements Command {
         this.inventory = new Inventory();
     }
 
-
+    /**
+     * checks if your inventory has key, if yes it will open the locked location
+     */
 
     @Override
     public String execute() {

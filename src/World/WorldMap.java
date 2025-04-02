@@ -1,8 +1,14 @@
 package World;
 
+import Items.Food;
+import Items.Item;
+import Items.Key;
+import Items.Valuable;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -13,6 +19,7 @@ public class WorldMap {
     private static int start = 0;
     private static int currentPosition = start;
     private Scanner scanner = new Scanner(System.in);
+    private HashMap<Integer, ArrayList<Item>> itemsOfLocation = new HashMap<>();
 
 
     public boolean loadMap() {
@@ -31,6 +38,59 @@ public class WorldMap {
 
     }
 
+    ArrayList<Item> items = new ArrayList<>();
+    public void addItemsToLoc(){
+        if (!itemsOfLocation.containsKey(currentPosition)) {
+            switch (currentPosition) {
+                case 2:
+                    items.add(new Food("Donut", "Donut is great for your healt right?"));
+                    break;
+                case 4:
+                    items.add(new Valuable("Golden necklase", "Really expensive necklase why not take it?", true));
+                    break;
+                case 7:
+                    items.add(new Key("Keys to garage", "You can open garage duhh", 11));
+                    break;
+                case 8:
+                    items.add(new Valuable("Golden pan", "Golden pan? what these guys be doin", true));
+                    items.add(new Food("Cat", "a lot of protein, well at worse situations you can eat it"));
+                    break;
+                case 10:
+                    items.add(new Valuable("Apple TV", "Expensive TV, you could somehow take it with you right?", true));
+                    break;
+                case 12:
+                    items.add(new Key("Keys for the main door", "This one can take you to freedom", 9));
+                    break;
+            }
+            itemsOfLocation.put(currentPosition, items);
+
+        }
+
+    }
+
+    public static void setWorld(HashMap<Integer, Location> world) {
+        WorldMap.world = world;
+    }
+
+    public static void setStart(int start) {
+        WorldMap.start = start;
+    }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+    public HashMap<Integer, ArrayList<Item>> getItemsOfLocation() {
+        return itemsOfLocation;
+    }
+
+    public void setItemsOfLocation(HashMap<Integer, ArrayList<Item>> itemsOfLocation) {
+        this.itemsOfLocation = itemsOfLocation;
+    }
 
     public Location getCurrentPosition(){
         return world.get(currentPosition);

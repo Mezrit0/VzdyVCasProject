@@ -16,6 +16,6 @@ public class Valuable extends Item {
 
     @Override
     public void use() {
-
+        System.out.println("you cannot use valuable item");
     }
 }

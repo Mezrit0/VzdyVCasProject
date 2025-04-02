@@ -12,6 +12,10 @@ public class UseItem implements Command {
         this.inventory = new Inventory();
     }
 
+    /**
+     *  if item is in your inventory, it will be used
+     */
+
     @Override
     public String execute() {
         setInventory(inventory);

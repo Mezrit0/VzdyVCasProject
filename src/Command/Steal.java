@@ -20,6 +20,10 @@ public class Steal implements Command{
         this.inventory = new Inventory();
     }
 
+    /**
+     * same as PickUp but if its valuable then you have to steal it
+     */
+
     @Override
     public String execute() {
         setWorld(world);

@@ -20,6 +20,9 @@ public class PickUp implements Command {
     private Item item;
     private Inventory inventory;
 
+    /**
+     * will check if the item is in that room if so then it will add it to your inventory
+     */
 
     @Override
     public String execute() {

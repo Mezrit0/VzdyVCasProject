@@ -15,6 +15,10 @@ public class Text implements Command {
         this.world = world;
     }
 
+    /**
+     * if the location you're located in has any backstory or info to give you this command will write it down
+     */
+
     public static String giveSpeech(){
         try (BufferedReader br = new BufferedReader(new FileReader("speeches.txt"))) {
             String line;

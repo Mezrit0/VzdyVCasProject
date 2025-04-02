@@ -14,6 +14,10 @@ public class GoTo implements Command {
         this.world = world;
     }
 
+    /**
+     * asks you which way you want to go then if its valid move will activate world.move();
+     */
+
     @Override
     public String execute() {
         System.out.println("Where do you want to go to?");

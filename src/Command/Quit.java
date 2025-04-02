@@ -9,6 +9,10 @@ public class Quit implements Command {
     public void setWorld(WorldMap world) {
         this.world = world;
     }
+
+    /**
+     * quits the game
+     */
     @Override
     public String execute() {
         return "the end";
