@@ -38,14 +38,13 @@ public class WorldMap {
 
     }
 
-    ArrayList<Item> items = new ArrayList<>();
-    public void addItemsToLoc(){
 
+    public void addItemsToLoc(){
         if (!itemsOfLocation.containsKey(currentPosition)) {
+            ArrayList<Item> items = new ArrayList<>();
             switch (currentPosition) {
                 case 2:
                     items.add(new Food("Donut", "Donut is great for your healt right?"));
-                    System.out.println("Adding items to location " + world.get(currentPosition).getName());
                     break;
                 case 4:
                     items.add(new Valuable("Golden necklase", "Really expensive necklase why not take it?", true));

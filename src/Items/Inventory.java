@@ -4,13 +4,9 @@ import java.util.ArrayList;
 
 public class Inventory {
 
-    private ArrayList<Item> items;
+    private static ArrayList<Item> items = new ArrayList<>();
 
-    public Inventory() {
-        this.items = new ArrayList<>();
-    }
-
-    public String addItem(Item item) {
+    public static String addItem(Item item) {
         if (item != null) {
             items.add(item);
             return "Item was added: " + item.getName();
@@ -27,6 +23,8 @@ public class Inventory {
             return "Item isn't in your inventory";
         }
     }
+
+
 
     public boolean hasItem(Item item) {
         return items.contains(item);
